@@ -1,0 +1,33 @@
+! Edit and save this file at 'sudo nano /.Xmodmap'
+! Once edited load the changes with 'xmodmap /.Xmodmap'
+
+! Explanation:
+! https://wiki.archlinux.org/index.php/xmodmap#Modifier_keys
+
+! The following commands swap the right 'Cmd' and 'alt' keys
+keycode 134 = ISO_Level3_Shift NoSymbol ISO_Level3_Shift NoSymbol ISO_Level$
+clear mod4
+keycode 108 = Super_R
+add mod4 = Super_R
+
+! In order to find out a specific keycode of a key just run 'xev'
+
+! Each keysym column in the table corresponds to a particular
+! combination of modifier keys.
+! 1. Key
+! 2. Shift + Key
+! 3. mode_switch + Key
+! 4. mode_switch + Shift + Key
+! 5. AltGr + Key
+! 6. AltGr + Shift + Key
+
+! List of keysyms recognised by xmodmap:
+! http://wiki.linuxquestions.org/wiki/List_of_Keysyms_Recognised_by_Xmodmap
+
+! Activate custom way of entering braces
+keycode 49 = less greater backslash backslash backslash
+keycode 94 = section degree
+keycode 34 = udiaeresis egrave a a bracketleft
+keycode 35 = diaeresis exclam a a bracketright
+keycode 48 = adiaeresis agrave a a braceleft
+keycode 51 = dollar sterling a a braceright
